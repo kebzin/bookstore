@@ -23,7 +23,17 @@ export const convertToGambianCurrency = (amount: number) => {
   return `₵ ${formattedGambianAmount}`;
 };
 
-const ProductCard = ({ product }) => {
+interface Product {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  originalPrice?: number;
+  rating?: number;
+  sold?: number;
+}
+
+const ProductCard = ({ product }: { product: Product }) => {
   const { cart, addToCart, removeFromCart } = useAppContext();
 
   const isInCart = cart.some((item) => item.id === product.id);

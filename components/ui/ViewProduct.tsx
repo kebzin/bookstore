@@ -17,7 +17,18 @@ import { useAppContext } from "@/contexProvider";
 import Cart from "../Cart";
 // import Checkout from "../Checkout";
 
-const ViewProduct = ({ product }) => {
+interface Product {
+  id: number;
+  name: string;
+  image: string;
+  price: number;
+  description?: string;
+  author?: string;
+  category?: string;
+  originalPrice?: number;
+}
+
+const ViewProduct = ({ product }: { product: Product }) => {
   const { cart, addToCart, removeFromCart } = useAppContext();
   // const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
