@@ -11,23 +11,8 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { convertToGambianCurrency } from "./ui/ProductCard";
-import { Avatar, AvatarImage } from "./ui/avatar";
 
-type CartItem = {
-  id: string;
-  name: string;
-  price: number;
-  image: string;
-};
-
-const Checkout = ({
-  cart,
-  onClose,
-}: {
-  cart: CartItem[];
-  onClose: () => void;
-}) => {
+const Checkout = ({}) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -67,14 +52,7 @@ const Checkout = ({
         </div> */}
 
         <SheetFooter className="mt-6">
-          <Button
-            onClick={() => {
-              alert("Purchase Successful! 🎉");
-              onClose();
-            }}
-          >
-            Confirm Purchase
-          </Button>
+          <Button>Confirm Purchase</Button>
           <SheetClose asChild>
             <Button variant="secondary">Close</Button>
           </SheetClose>

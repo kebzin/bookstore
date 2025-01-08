@@ -15,10 +15,11 @@ import { convertToGambianCurrency } from "./ProductCard";
 import { Avatar, AvatarImage } from "./avatar";
 import { useAppContext } from "@/contexProvider";
 import Cart from "../Cart";
+// import Checkout from "../Checkout";
 
 const ViewProduct = ({ product }) => {
   const { cart, addToCart, removeFromCart } = useAppContext();
-  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
+  // const [isCheckoutOpen, setIsCheckoutOpen] = useState(false);
 
   const isInCart = cart.some((item) => item.id === product.id);
 
@@ -76,12 +77,6 @@ const ViewProduct = ({ product }) => {
       </SheetContent>
 
       {/* Checkout Sheet */}
-      {isCheckoutOpen && (
-        <Checkout
-          onClose={() => setIsCheckoutOpen(false)}
-          cart={[product]} // Pass only the current product for direct purchase
-        />
-      )}
     </Sheet>
   );
 };
