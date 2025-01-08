@@ -14,10 +14,7 @@ import { useState } from "react";
 import { useAppContext } from "@/contexProvider";
 import { useRouter } from "next/navigation";
 
-const LoginForm = ({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
+const LoginForm = () => {
   const { loginUser } = useAppContext(); // Destructure the loginUser function from context
   const [errorMessage, setErrorMessage] = useState<string | null>(null); // State for error message
   const [successMessage, setSuccessMessage] = useState<string | null>(null); // State for success message
@@ -42,7 +39,7 @@ const LoginForm = ({
 
   return (
     <div className="flex items-center m-auto justify-center ">
-      <div className={cn("flex flex-col gap-6 pt-36", className)} {...props}>
+      <div className={cn("flex flex-col gap-6 pt-36")}>
         <Card>
           <CardHeader className="text-center">
             <CardTitle className="text-xl">Welcome back</CardTitle>
