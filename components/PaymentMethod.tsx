@@ -22,14 +22,13 @@ import {
 import { Apple, WalletCards } from "lucide-react";
 
 interface DemoPaymentMethodProps {
-  open: boolean;
   setopen: (open: boolean) => void;
 }
 
-const DemoPaymentMethod = ({ open, setopen }: DemoPaymentMethodProps) => {
+const DemoPaymentMethod = ({ setopen }: DemoPaymentMethodProps) => {
   // close the seet when clicked
   const handleClose = () => {
-    setopen(!open);
+    setopen(false);
   };
 
   return (
