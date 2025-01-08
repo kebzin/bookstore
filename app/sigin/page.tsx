@@ -34,7 +34,7 @@ const LoginForm = ({
       setSuccessMessage("Login successful!");
       router.push("/"); // Redirect to home page after successful login
       setErrorMessage(null); // Clear any previous error messages
-    } catch (error) {
+    } catch {
       setErrorMessage("Failed to login. Please check your email.");
       setSuccessMessage(null); // Clear any previous success messages
     }
