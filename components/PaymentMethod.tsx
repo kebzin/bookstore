@@ -21,15 +21,8 @@ import {
 } from "@/components//ui/select";
 import { Apple, WalletCards } from "lucide-react";
 
-interface DemoPaymentMethodProps {
-  setopen: (open: boolean) => void;
-}
-
-const DemoPaymentMethod = ({ setopen }: DemoPaymentMethodProps) => {
+const DemoPaymentMethod = () => {
   // close the seet when clicked
-  const handleClose = () => {
-    setopen(false);
-  };
 
   return (
     <Card>
@@ -141,9 +134,7 @@ const DemoPaymentMethod = ({ setopen }: DemoPaymentMethodProps) => {
         </div>
       </CardContent>
       <CardFooter>
-        <Button onClick={handleClose} className="w-full">
-          Continue
-        </Button>
+        <Button className="w-full">Continue</Button>
       </CardFooter>
     </Card>
   );
